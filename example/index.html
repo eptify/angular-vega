@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>angular-vega example</title>
+        <script src="../bower_components/d3/d3.min.js"></script>
+        <script src="../bower_components/d3-cloud/d3.layout.cloud.js"></script>
+        <!-- Not in bower yet: d3.geo.projection -->
+        <script src="../bower_components/vega/vega.js"></script>
+        <script src="../bower_components/angular/angular.js"></script>
+        <script src="../src/angular-vega.js"></script>
+        <script src="app.js"></script>
+    </head>
+    <body ng-app="exampleApp" ng-controller="BarChartController">
+        You can databind any part of the vega spec.
+        <form>
+            x(1) =
+            <input type="number" ng-model="spec.data[0].values[0].y" />
+            <br>
+            bar color =
+            <select ng-model="spec.marks[0].properties.update.fill.value">
+                <option>steelblue</option>
+                <option>red</option>
+                <option>green</option>
+            </select>
+        </form>
+
+        <div vega id="chart1" spec="spec"></div>
+
+        A copy of chart1 bound to the same spec.
+        <div vega id="chart2" spec="spec"></div>
+    </body>
+</html>

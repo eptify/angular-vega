@@ -1,0 +1,26 @@
+{
+  "name": "angular-vega",
+  "main": ["./src/angular-vega.js"],
+  "authors": [
+    "eptify"
+  ],
+  "description": "Angular directive for rendering vega specs",
+  "keywords": [
+    "d3",
+    "chart",
+    "angular",
+    "angularjs",
+    "vega"
+  ],
+  "license": "BSD",
+  "ignore": [
+    "**/.*",
+    "bower_components"
+  ],
+  "dependencies": {
+    "d3": "~3.3.10",
+    "d3-cloud": "latest",
+    "vega": "latest",
+    "angular": "latest"
+  }
+}
