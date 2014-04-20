@@ -2,7 +2,8 @@
   "name": "angular-vega",
   "main": ["./src/angular-vega.js"],
   "authors": [
-    "eptify"
+    "eptify",
+    "kristw"
   ],
   "description": "Angular directive for rendering vega specs",
   "keywords": [

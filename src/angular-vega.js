@@ -1,19 +1,18 @@
 var ngVega = angular.module('ngVega', []);
 
 ngVega.directive('vega', function() {
-    function link(scope, element, attrs) {
-        scope.$watch('spec', function () {
-            vg.parse.spec(scope.spec, function(chart) {
-                chart({el:"#"+attrs.id}).update();
-             })
-        }, true)
+  return {
+    restrict: 'AE',
+    scope: {
+      spec: '='
+    },
+    link: function(scope, element, attrs) {
+      var dom = element[0];
+      scope.$watch('spec', function () {
+        vg.parse.spec(scope.spec, function(chart) {
+          chart({el: dom}).update();
+        });
+      }, true);
     }
-
-    return {
-        restrict: 'A',
-        link: link,
-        scope: {
-            spec: '='
-        }
-    }
+  };
 });
