@@ -1,6 +1,8 @@
 {
   "name": "angular-vega",
-  "main": ["./src/angular-vega.js"],
+  "main": [
+    "./src/angular-vega.js"
+  ],
   "authors": [
     "eptify",
     "kristw"
@@ -22,6 +24,7 @@
     "d3": "~3.3.10",
     "d3-cloud": "latest",
     "vega": "latest",
-    "angular": "latest"
+    "angular": "latest",
+    "ng-debounce": "~0.1.1"
   }
 }

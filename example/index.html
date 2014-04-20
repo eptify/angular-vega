@@ -1,32 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>angular-vega example</title>
-        <script src="../bower_components/d3/d3.min.js"></script>
-        <script src="../bower_components/d3-cloud/d3.layout.cloud.js"></script>
-        <!-- Not in bower yet: d3.geo.projection -->
-        <script src="../bower_components/vega/vega.js"></script>
-        <script src="../bower_components/angular/angular.js"></script>
-        <script src="../src/angular-vega.js"></script>
-        <script src="app.js"></script>
-    </head>
-    <body ng-app="exampleApp" ng-controller="BarChartController">
-        You can databind any part of the vega spec.
-        <form>
-            x(1) =
-            <input type="number" ng-model="spec.data[0].values[0].y" />
-            <br>
-            bar color =
-            <select ng-model="spec.marks[0].properties.update.fill.value">
-                <option>steelblue</option>
-                <option>red</option>
-                <option>green</option>
-            </select>
-        </form>
+  <head>
+    <title>angular-vega example</title>
+    <script src="../bower_components/d3/d3.min.js"></script>
+    <script src="../bower_components/d3-cloud/d3.layout.cloud.js"></script>
+    <!-- Not in bower yet: d3.geo.projection -->
+    <script src="../bower_components/vega/vega.js"></script>
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/ng-debounce/angular-debounce.js"></script>
+    <script src="../src/angular-vega.js"></script>
+    <script src="app.js"></script>
+  </head>
+  <body ng-app="exampleApp" ng-controller="BarChartController">
+    You can databind any part of the vega spec.
+    <form>
+      x(1) =
+      <input type="number" ng-model="data1.table[0].y" />
+      <br>
+      bar color =
+      <select ng-model="spec.marks[0].properties.update.fill.value">
+        <option>steelblue</option>
+        <option>red</option>
+        <option>green</option>
+      </select>
+      <label for="">
+        <input type="radio" ng-model="renderer" value="canvas">canvas
+      </label>
+      <label for="">
+        <input type="radio" ng-model="renderer" value="svg">svg
+      </label>
+      <button ng-click="testData=data1">data#1</button>
+      <button ng-click="testData=data2">data#2</button>
+    </form>
 
-        Multiple charts bound to the same spec.
-        <div vega spec="spec"></div>
-        <div vega spec="spec"></div>
-        <div vega spec="spec"></div>
-    </body>
+    All charts on this page are bound to the same spec.
+    <div vega spec="spec" vega-data="testData"></div>
+
+    Same chart but rendered with svg instead of canvas.
+    <div vega spec="spec" vega-data="testData" vega-renderer="'svg'"></div>
+
+    Same chart but rendered with selected option.
+    <div vega spec="spec" vega-data="testData" vega-renderer="renderer"></div>
+  </body>
 </html>
