@@ -3,7 +3,7 @@ var example = angular.module('exampleApp', ['ngVega']);
 example.controller('BarChartController', function($scope) {
   $scope.renderer = 'canvas';
   $scope.spec = {
-    "width": 400,
+    "width": 300,
     "height": 200,
     "padding": {"top": 10, "left": 30, "bottom": 30, "right": 10},
     "data": [
@@ -82,7 +82,7 @@ example.controller('BarChartController', function($scope) {
     ]
   };
 
-  $scope.testData = data2;
+  $scope.testData = data1;
   $scope.data1 = data1;
   $scope.data2 = data2;
 });
