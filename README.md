@@ -11,7 +11,7 @@ Angular directive for rendering vega specs.
 
 Where `spec` is `$scope.spec` in your controller.
 
-`vega-data` (optional) can be used to pass dynamic data. In the example above, it is boundd to `$scope.testData`.
+`vega-data` (optional) can be used to pass dynamic data. In the example above, it is bound to `$scope.testData`.
 
 `vega-renderer` (optional) can be used to set renderer (canvas or svg).
 
