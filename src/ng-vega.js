@@ -5,7 +5,7 @@
   if (typeof define === 'function' && define.amd) {
     // Support AMD. Register as an anonymous module.
     // EDIT: List all dependencies in AMD style
-    define(['angular', 'vega'], factory);
+    define(['angular', 'vega', 'ng-debounce'], factory);
   } else {
     // No AMD. Set module as a global variable
     // EDIT: Pass dependencies to factory function
