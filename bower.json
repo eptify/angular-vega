@@ -3,8 +3,10 @@
   "main": [
     "./src/ng-vega.js"
   ],
+  "version": "1.0.0",
+  "homepage": "https://github.com/kristw/ng-vega",
   "authors": [
-    "kristw",
+    "Krist Wongsuphasawat <krist.wongz@gmail.com>",
     "eptify"
   ],
   "description": "Angular directive for rendering vega specs",
@@ -18,7 +20,10 @@
   "license": "BSD",
   "ignore": [
     "**/.*",
-    "bower_components"
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
   ],
   "dependencies": {
     "d3": "latest",
