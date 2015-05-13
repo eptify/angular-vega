@@ -17,6 +17,13 @@ h1{
   font-weight: 300;
 }
 
+.mini-label{
+  margin-top: 5px;
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
 .ace-container{
   position: absolute;
   top: 65px;
