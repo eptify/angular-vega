@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ng-vega example</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="example/editor.css">
+  </head>
+  <body ng-app="exampleEditor" ng-controller="EditorController">
+
+    <a href="https://github.com/kristw/ng-vega"><img class="fork-me" style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+
+    <header>
+      <h1>
+        <i class="glyphicon glyphicon-edit"></i>
+        Vega editor
+      </h1>
+    </header>
+
+    <div class="ace-container">
+      <div ui-ace="{
+        useWrapMode: true,
+        mode: 'json',
+        theme: 'twilight'
+      }" ng-model="specString"></div>
+    </div>
+    <div class="vega-container">
+      <div ng-show="errorMessage">
+        <div class="alert alert-danger">
+          <b>ERROR</b>: {{errorMessage}}
+        </div>
+      </div>
+      <div ng-hide="errorMessage">
+        <div vega spec="spec" vega-renderer="renderer"></div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="bower_components/ace-builds/src-min-noconflict/ace.js"></script>
+    <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="bower_components/angular-ui-ace/ui-ace.js"></script>
+    <script src="bower_components/d3/d3.min.js"></script>
+    <!-- Not in bower yet: d3.geo.projection -->
+    <script src="bower_components/vega/vega.js"></script>
+    <script src="src/ng-vega.js"></script>
+    <script src="example/editor.js"></script>
+
+  </body>
+</html>
