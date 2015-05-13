@@ -11,7 +11,7 @@
       <div class="row">
         <div class="col-xs-12" style="text-align:center">
           <h1>
-            angular-vega
+            ng-vega
           </h1>
         </div>
       </div>
@@ -62,7 +62,7 @@
       <div class="row">
         <div class="col-xs-4">
           All charts on this page are bound to the same spec.
-          <div vega spec="spec" vega-data="testData"></div>
+          <div vega spec="spec" vega-data="testData" vega-renderer="'canvas'"></div>
         </div>
         <div class="col-xs-4">
           Same chart but rendered with svg instead of canvas.
@@ -79,7 +79,6 @@
     <!-- Not in bower yet: d3.geo.projection -->
     <script src="../bower_components/vega/vega.js"></script>
     <script src="../bower_components/angular/angular.js"></script>
-    <script src="../bower_components/ng-debounce/angular-debounce.js"></script>
     <script src="../src/ng-vega.js"></script>
     <script src="app.js"></script>
 
