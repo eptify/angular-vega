@@ -21,6 +21,6 @@ Where `spec` is `$scope.spec` in your controller.
 
 `vega-renderer` (optional) can be used to set renderer (canvas or svg). Don't forget the quote
 
-See example folder for full usage.
+See [demo](http://kristw.github.io/ng-vega) or view [demo code](https://github.com/kristw/ng-vega/blob/master/index.html)
 
 For more information about Vega, please refer to [vega documentation](http://trifacta.github.io/vega/) and [vega editor](http://trifacta.github.io/vega/editor/).
