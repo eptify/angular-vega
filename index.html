@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ng-vega example</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <style>
+      h1{
+        font-weight: 300;
+      }
+    </style>
+  </head>
+  <body ng-app="exampleApp" ng-controller="BarChartController">
+
+    <a href="https://github.com/kristw/ng-vega"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12" style="text-align:center">
+          <h1>
+            ng-vega
+          </h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="form-inline">
+              You can databind any part of the vega spec: &nbsp;&nbsp;
+              x(1) =
+              <input class="form-control" type="number" ng-model="data1.table[0].y" />
+              bar color =
+              <select class="form-control" ng-model="spec.marks[0].properties.update.fill.value">
+                <option>steelblue</option>
+                <option>red</option>
+                <option>green</option>
+              </select>
+            </div>
+            <div class="form-inline" style="margin-top:8px">
+              <label for="">
+                renderer:&nbsp;&nbsp;
+              </label>
+              <div class="radio">
+                <label for="">
+                  <input type="radio" ng-model="renderer" value="canvas">&nbsp;canvas
+                </label>
+              </div>
+              <div class="radio">
+                <label for="">
+                  <input type="radio" ng-model="renderer" value="svg">&nbsp;svg
+                </label>
+              </div>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <label for="">
+                data:&nbsp;&nbsp;
+              </label>
+              <div class="btn-group">
+                <button class="btn btn-sm btn-default" ng-click="testData=data1">data#1</button>
+                <button class="btn btn-sm btn-default" ng-click="testData=data2">data#2</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-4">
+          All charts on this page are bound to the same spec.
+          <div vega spec="spec" vega-data="testData" vega-renderer="'canvas'"></div>
+        </div>
+        <div class="col-xs-4">
+          Same chart but rendered with svg instead of canvas.
+          <div vega spec="spec" vega-data="testData" vega-renderer="'svg'"></div>
+        </div>
+        <div class="col-xs-4">
+          Same chart but rendered with selected option ({{renderer}}).
+          <div vega spec="spec" vega-data="testData" vega-renderer="renderer"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="bower_components/d3/d3.min.js"></script>
+    <!-- Not in bower yet: d3.geo.projection -->
+    <script src="bower_components/vega/vega.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="src/ng-vega.js"></script>
+    <script src="example/app.js"></script>
+
+  </body>
+</html>
