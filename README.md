@@ -5,6 +5,18 @@ Angular directive for rendering vega specs.
 This project was forked from angular-vega.
 I have made major changes in the directive and update the example.
 
+### Installation
+
+```
+bower install ng-vega --save
+```
+
+or
+
+```
+npm install ng-vega --save
+```
+
 ### Usage
 
 ```javascript
